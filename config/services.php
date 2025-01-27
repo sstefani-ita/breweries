@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'api_open_brewery_db' => [
+        'url' => env('API_OPEN_BREWERY_DB_URL', 'https://api.openbrewerydb.org/v1/breweries'),
+    ]
+
 ];
