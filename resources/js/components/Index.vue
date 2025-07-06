@@ -16,7 +16,7 @@
                 password: password.value
             });
 
-            if(response.data.data.token) {
+            if (response.data.data.token) {
 
                 // Better -> https://laravel.com/docs/11.x/sanctum#spa-authentication
                 localStorage.setItem('token', response.data.data.token);
@@ -52,7 +52,7 @@
     };
 
     onMounted(async () => {
-        if(localStorage.getItem('token')) {
+        if (localStorage.getItem('token')) {
             isAuthenticated.value = true;
             getResults(1);
         }
