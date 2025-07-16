@@ -24,12 +24,12 @@ class BreweryController extends Controller
             'page' => $request->input('page', 1)
         ]);
 
-        if(!$response->successful())
+        if (!$response->successful())
             return $this->error('Failed.', $response->status());
 
         $responseMeta = $this->get(config('services.api_open_brewery_db.url') . '/meta');
 
-        if(!$responseMeta->successful())
+        if (!$responseMeta->successful())
             return $this->error('Failed.', $responseMeta->status());
 
         $results = new LengthAwarePaginator(

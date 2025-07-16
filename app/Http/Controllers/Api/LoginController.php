@@ -20,7 +20,7 @@ class LoginController extends Controller
 
         $user = User::firstWhere('username', $request->username);
 
-        if($user && Hash::check($request->password, $user->password)) {
+        if ($user && Hash::check($request->password, $user->password)) {
             return $this->success('Authorized.', [
                 'token' => $user->createToken($request->username, ["*"], now()->addHour())->plainTextToken
             ], 200);
