@@ -96,7 +96,7 @@ class BreweryControllerTest extends TestCase
             ->assertJson([
                 'links' => [
                     'first' => 'http://localhost/api/v1/data?per_page=' . $per_page . '&page=' . ($page - 1),
-                    'last' => 'http://localhost/api/v1/data?per_page=' . $per_page . '&page=836',
+                    'last' => 'http://localhost/api/v1/data?per_page=' . $per_page . '&page=840',
                     'prev' => 'http://localhost/api/v1/data?per_page=' . $per_page . '&page=' . ($page - 1),
                     'next' => 'http://localhost/api/v1/data?per_page=' . $per_page . '&page=' . ($page + 1)
                 ]
@@ -110,7 +110,7 @@ class BreweryControllerTest extends TestCase
         $response->assertStatus(200)
             ->assertJson([
                 'meta' => [
-                    'total' => 8355,
+                    'total' => 8393,
                 ]
             ]);
     }
